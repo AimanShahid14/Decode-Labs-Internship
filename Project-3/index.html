@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz App | Project 3 - DecodeLabs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="app">
+
+    <header class="app-header">
+      <h1>Web Basics Quiz</h1>
+      <p>Examine your Potential</p>
+
+      <div class="theme-picker" id="themePicker">
+        <span class="theme-label">Background:</span>
+        <button class="swatch js-theme-swatch" data-theme="indigo" style="background:#5b6ee8" aria-label="Indigo theme"></button>
+        <button class="swatch js-theme-swatch" data-theme="sunset" style="background:#e8735b" aria-label="Sunset theme"></button>
+        <button class="swatch js-theme-swatch" data-theme="ocean" style="background:#22b8b0" aria-label="Ocean theme"></button>
+        <button class="swatch js-theme-swatch" data-theme="forest" style="background:#4caf6e" aria-label="Forest theme"></button>
+        <button class="swatch js-theme-swatch" data-theme="grape" style="background:#9b59d0" aria-label="Grape theme"></button>
+      </div>
+    </header>
+
+    <!-- ===== START SCREEN ===== -->
+    <section id="startScreen" class="screen">
+      <p class="screen-text">Test your knowledge with 5 quick questions.<br>Each question has a 15 second timer!</p>
+      <button id="startBtn" class="btn btn-primary js-start-btn">Start Quiz</button>
+    </section>
+
+    <!-- ===== QUIZ SCREEN ===== -->
+    <section id="quizScreen" class="screen is-hidden">
+
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+
+      <div class="quiz-meta">
+        <span id="questionCounter">Question 1 / 5</span>
+        <span id="scoreDisplay">Score: 0</span>
+      </div>
+
+      <div class="timer-row">
+        <div class="timer-bar">
+          <div id="timerFill" class="timer-fill"></div>
+        </div>
+        <span id="timerText">15s</span>
+      </div>
+
+      <h2 id="questionText" class="question-text">Question goes here</h2>
+
+      <div id="optionsList" class="options-list">
+        <!-- Option buttons injected by JavaScript -->
+      </div>
+
+      <button id="nextBtn" class="btn btn-secondary js-next-btn is-hidden">Next Question →</button>
+    </section>
+
+    <!-- ===== RESULT SCREEN ===== -->
+    <section id="resultScreen" class="screen is-hidden">
+      <h2 id="resultTitle">Quiz Complete!</h2>
+      <p id="resultScore" class="result-score">You scored 0 / 5</p>
+      <p id="resultMessage" class="screen-text"></p>
+      <button id="restartBtn" class="btn btn-primary js-restart-btn">Try Again</button>
+    </section>
+
+  </div>
+
+  <footer>Best of Luck !</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
